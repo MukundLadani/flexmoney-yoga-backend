@@ -19,19 +19,6 @@ app.use(morgan("tiny"));
 
 // mongodb connection
 connectDB();
-// let db;
-// MongoClient.connect(
-// 	process.env.MONGO_URI,
-// 	{ useNewUrlParser: true, useUnifiedTopology: true },
-// 	(err, client) => {
-// 		if (err) {
-// 			console.error("Error connecting to MongoDB:", err);
-// 			return;
-// 		}
-// 		console.log("Connected to MongoDB");
-// 		db = client.db(YogaDB);
-// 	}
-// );
 
 //parse request to body-parser
 app.use(bodyparser.urlencoded({ extended: true }));
@@ -81,7 +68,6 @@ app.post("/api/enroll", async (req, res) => {
 // Mock function for payment processing
 function CompletePayment(name, age, batch) {
 	// Replace this with actual payment processing logic
-	// For simplicity, always return success
 	return { success: true, message: "Payment successful." };
 }
 
